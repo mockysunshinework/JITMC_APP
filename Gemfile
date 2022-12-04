@@ -5,6 +5,8 @@ ruby '3.0.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
+# bootstrapを導入
+# gem 'bootstrap-sass'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
@@ -29,6 +31,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
+gem 'devise-i18n'
+gem 'devise-bootstrap5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
