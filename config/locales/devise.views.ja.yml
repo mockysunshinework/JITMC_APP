@@ -15,6 +15,7 @@ ja:
         last_sign_in_at: 最終ログイン時刻
         last_sign_in_ip: 最終ログインIPアドレス
         locked_at: ロック時刻
+        name: 名前
         password: パスワード
         password_confirmation: パスワード（確認用）
         remember_created_at: ログイン記憶時刻
@@ -27,7 +28,7 @@ ja:
         updated_at: 更新日
     models:
       user: ユーザー
-  devise:
+  users:
     confirmations:
       confirmed: メールアドレスが確認できました。
       new:
@@ -124,7 +125,7 @@ ja:
         sign_in: ログイン
         sign_in_with_provider: "%{provider}でログイン"
         sign_up: アカウント登録
-      minimum_password_length: "（%{count}字以上）"
+      minimum_password_length: "（%{count}文字以上）"
     unlocks:
       new:
         resend_unlock_instructions: アカウントのロック解除方法を再送する
