@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :users do
+    resource :dash_boards, only: :show, as: :root
+  end
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   devise_for :users, controllers: {
     registrations: 'users/registrations',
