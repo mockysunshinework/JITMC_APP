@@ -1,10 +1,10 @@
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 mx-auto">
     <h1>DashBoards</h1>
-    <p><%= current_user.name %></p>
-    <div>
-        <%= button_to "編集", edit_user_registration_path, class: "btn btn-primary", method: :get %>
-        <%= button_to "ログアウト", destroy_user_session_path, class: "btn btn-warning", method: :delete %>
+    <h2><%= current_user.name %></h2>
+    <div class= "d-grid gap-2">
+        <%= button_to t('.edit'), edit_user_registration_path, class: "btn btn-primary", method: :get %>
+        <%= button_to t('.sign_out'), destroy_user_session_path, class: "btn btn-warning btn-lg mw-100", method: :delete %>
     </div>
 	</div>
 </div>
