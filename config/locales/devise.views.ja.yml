@@ -49,7 +49,7 @@ ja:
     # ダッシュボードを追記
     dash_boards:
       show:
-        edit: 編集
+        edit: 　  編集  　 
         sign_out: ログアウト
     # ここまで
     mailer:
