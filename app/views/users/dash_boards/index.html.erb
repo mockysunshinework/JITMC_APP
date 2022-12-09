@@ -1,0 +1,6 @@
+<h1>DashBoards</h1>
+<h2><%= current_user.name %></h2>
+<div>
+  <%= button_to "編集", edit_user_registration_path, class: "btn btn-primary", method: :get %>
+  <%= button_to "ログアウト", destroy_user_session_path, class: "btn btn-warning", method: :delete %>
+</div>
