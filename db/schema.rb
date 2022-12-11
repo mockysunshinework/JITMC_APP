@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2022_12_10_204803) do
 
   create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
+    t.string "title", null: false
+    t.text "content", null: false
     t.string "image"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
