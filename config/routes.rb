@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :users do
+    get 'articles/new'
+  end
   root 'home#top'
   namespace :users do
     resource :dash_boards, only: :show, as: :root
