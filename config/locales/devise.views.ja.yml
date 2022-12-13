@@ -30,6 +30,10 @@ ja:
         title: タイトル
         content: 本文
         image: 画像
+        detail: 詳細表示
+        edit_delete: 編集・削除
+        edit: 編集
+        delete: 削除
     models:
       user: ユーザー
       # article: 記事

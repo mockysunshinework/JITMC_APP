@@ -5,17 +5,24 @@
     <table class="table table-hover" id="table-articles">
       <thead>
         <tr>
+        	<th><%= Article.human_attribute_name :detail %></th>
           <th><%= Article.human_attribute_name :title %></th>
           <th><%= Article.human_attribute_name :content %></th>
           <th><%= Article.human_attribute_name :image %></th>
+					<th><%= Article.human_attribute_name :edit_delete %></th>
         </tr>
       </thead>
       <tbody>
         <% @articles.each do |article| %>
         <tr>
+					<td><%= link_to "詳細表示", "#", class: "btn btn-primary" %></td>
           <td><%= article.title %></td> 
           <td><%= article.content %></td>
           <td></td>
+					<td>
+						<%= link_to t("activerecord.attributes.article.edit"), "#", class: "btn btn-primary" %>
+						<%= link_to t("activerecord.attributes.article.delete"), "#", class: "btn btn-danger" %>
+					</td>
         </tr>
         <% end %>
       </tbody>
