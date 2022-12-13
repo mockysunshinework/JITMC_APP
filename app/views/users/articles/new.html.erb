@@ -3,17 +3,25 @@
   <div class="col-md-6 col-md-offset-3 mx-auto">
     <%= form_with(model: @article, url: users_articles_path,method: :post, local: true) do |f| %>
       <%#= render partial: 'shared/error_messages', locals: { obj: @request } %>
-    
+    <div class="field">
       <%= f.label :title, class: "label-article" %>
       <%= f.text_field :title, class: "form-control" %>
-      
+		</div>
+     <div class="field"> 
       <%= f.label :content, class: "label-article" %>
       <%= f.text_area :content, rows: 2, class: "form-control" %>
-
+		</div>
+		<%
+=begin%>
+ <div class="field">
       <%= f.label :image, class: "label-article" %><br>
-      <%= f.file_field :image, id:"item-image", class:"hidden" %>			
-
-			<%= f.submit t('.sign_up'), class: "btn btn-primary btn-user-devise" %>
+      <%= f.file_field :image, accept: "image/*" %>			
+		</div> 
+<%
+=end%>
+		<div class="actions text-center my-4">
+			<%= f.submit t('activerecord.attributes.article.create'), class: "btn btn-primary btn-user-devise" %>
+		</div>
     <% end %>
 		<%= link_to "戻る", "#" %>
 	</div>

@@ -8,7 +8,7 @@ class Users::ArticlesController < ApplicationController
     
     if @article.save
       flash[:success] = "新規作成に成功しました"
-      redirect_to users_articles_path
+      redirect_to users_article_path(@article)
     else
       render :new
     end
@@ -18,11 +18,15 @@ class Users::ArticlesController < ApplicationController
     @articles = current_user.articles.all
   end
 
+  def show
+    @article = Article.find(params[:id])
+  end
+
 
 private
 
   def article_params
-    params.require(:article).permit(:title, :content)
+    params.require(:article).permit(:title, :content, :image)
   end
 
 end
