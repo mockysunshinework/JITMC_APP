@@ -5,7 +5,6 @@ class Users::ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.new(article_params)
-    
     if @article.save
       flash[:success] = "新規作成に成功しました"
       redirect_to users_article_path(@article)

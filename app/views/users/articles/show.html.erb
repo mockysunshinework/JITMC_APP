@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1 mx-auto">
 		
-    <table class="table", id="table-articles">
+    <table class="table mx-auto", id="table-articles">
       <thead class="border-bottom border-2 border-dark">
         <tr>
           <th><%= Article.human_attribute_name :title %></th>
@@ -14,7 +14,11 @@
         <tr>
           <td><%= @article.title %></td> 
           <td><%= @article.content %></td>
-          <td></td>
+          <% if @article.image.attached? %>
+            <td>
+              <%= image_tag @article.image.variant(resize: "200x200") %>
+            </td>
+          <% end %>
         </tr>
       </tbody>
     </table>
