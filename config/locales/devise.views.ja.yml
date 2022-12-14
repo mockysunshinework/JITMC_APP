@@ -28,6 +28,8 @@ ja:
         updated_at: 更新日
       article:
         article_index: 記事一覧
+        article_detail: 記事詳細
+        back_to_article_index: 記事一覧に戻る
         title: タイトル
         content: 本文
         image: 画像

@@ -1,8 +1,9 @@
-<h1><%= t("activerecord.attributes.article.article_index") %></h1>
+<h1><%= t("activerecord.attributes.article.article_detail") %></h1>
 <div class="row">
   <div class="col-md-10 col-md-offset-1 mx-auto">
-    <table class="table table-hover" id="table-articles">
-      <thead>
+		
+    <table class="table", id="table-articles">
+      <thead class="border-bottom border-2 border-dark">
         <tr>
           <th><%= Article.human_attribute_name :title %></th>
           <th><%= Article.human_attribute_name :content %></th>
@@ -13,20 +14,16 @@
         <tr>
           <td><%= @article.title %></td> 
           <td><%= @article.content %></td>
-          <%
-=begin%>
- <% if @article.image.attached? %>
-            <td><%= image_tag @article.image %></td>
-          <% end %> 
-<%
-=end%>
-					<td>
-						<%= link_to t("activerecord.attributes.article.edit"), "#", class: "btn btn-primary" %>
-						<%= link_to t("activerecord.attributes.article.delete"), "#", class: "btn btn-danger" %>
-					</td>
+          <td></td>
         </tr>
-        <% end %>
       </tbody>
     </table>
+    <div class="text-center my-4">
+		  <%= link_to t("activerecord.attributes.article.edit"), "#", class: "btn btn-primary" %>
+		  <%= link_to t("activerecord.attributes.article.delete"), "#", class: "btn btn-danger" %>    
+    </div>
+        <div class="text-center my-4">
+		  <%= link_to t("activerecord.attributes.article.back_to_article_index"), users_articles_path, class: "btn btn-primary" %>  
+    </div>
   </div>
 </div>
