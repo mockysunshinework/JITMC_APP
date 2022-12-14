@@ -37,6 +37,14 @@ class Users::ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    @article = Article.find(params[:id])
+    if @article.destroy
+      flash[:success] = "記事の削除に成功しました。"
+      redirect_to users_articles_path
+    end
+  end
+
 private
 
   def article_params

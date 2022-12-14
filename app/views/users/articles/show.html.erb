@@ -19,8 +19,8 @@
       </tbody>
     </table>
     <div class="text-center my-4">
-		  <%= link_to t("activerecord.attributes.article.edit"), "#", class: "btn btn-primary" %>
-		  <%= link_to t("activerecord.attributes.article.delete"), "#", class: "btn btn-danger" %>    
+		  <%= link_to t("activerecord.attributes.article.edit"),edit_users_article_path(@article) , class: "btn btn-primary" %>
+		  <%= link_to t("activerecord.attributes.article.delete"), users_article_path(@article), method: :delete, data: {confirm: t('users.registrations.edit.are_you_sure')}, class: "btn btn-danger" %>    
     </div>
         <div class="text-center my-4">
 		  <%= link_to t("activerecord.attributes.article.back_to_article_index"), users_articles_path, class: "btn btn-primary" %>  
