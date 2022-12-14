@@ -3,8 +3,9 @@
     <h1>DashBoards</h1>
     <h2><%= current_user.name %></h2>
     <div class= "center">
-        <%= button_to t('.edit'), edit_user_registration_path, class: "btn btn-primary btn-lg", method: :get %>
-        <%= button_to t('.sign_out'), destroy_user_session_path, class: "btn btn-warning btn-lg", method: :delete %>
+      <%= button_to t('.article_index'), users_articles_path, class: "btn btn-primary btn-lg ", method: :get %>
+      <%= button_to t('.edit'), edit_user_registration_path, class: "btn btn-primary btn-lg", method: :get %>
+      <%= button_to t('.sign_out'), destroy_user_session_path, class: "btn btn-warning btn-lg", method: :delete %>
     </div>
 	</div>
 </div>

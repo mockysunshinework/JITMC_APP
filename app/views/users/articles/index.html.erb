@@ -17,7 +17,7 @@
       <tbody>
         <% @articles.each do |article| %>
         <tr>
-					<td><%= link_to "詳細表示", "#", class: "btn btn-primary" %></td>
+					<td><%= link_to "詳細表示", users_article_path(article), class: "btn btn-primary" %></td>
           <td><%= article.title %></td> 
           <td><%= article.content %></td>
           <td></td>
@@ -29,8 +29,8 @@
 <%
 =end%>
 					<td>
-						<%= link_to t("activerecord.attributes.article.edit"), "#", class: "btn btn-primary" %>
-						<%= link_to t("activerecord.attributes.article.delete"), "#", class: "btn btn-danger" %>
+						<%= link_to t("activerecord.attributes.article.edit"), edit_users_article_path(article), class: "btn btn-primary" %>
+						<%= link_to t("activerecord.attributes.article.delete"), users_article_path(article), class: "btn btn-danger", method: :delete, data: {confirm: t('users.registrations.edit.are_you_sure')} %>
 					</td>
         </tr>
         <% end %>
