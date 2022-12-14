@@ -26,6 +26,17 @@ class Users::ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      @article.save
+      flash[:success] = "更新しました"
+      redirect_to users_article_path(@article)
+    else
+      render :edit
+    end
+  end
+
 private
 
   def article_params
