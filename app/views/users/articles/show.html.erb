@@ -5,17 +5,17 @@
     <table class="table", id="table-articles">
       <thead class="border-bottom border-2 border-dark">
         <tr>
-          <th><%= Article.human_attribute_name :title %></th>
-          <th><%= Article.human_attribute_name :content %></th>
-          <th><%= Article.human_attribute_name :image %></th>
+          <th style="width: 30%", class="text-center"><%= Article.human_attribute_name :title %></th>
+          <th style="width: 40%", class="text-center"><%= Article.human_attribute_name :content %></th>
+          <th style="width: 30%", class="text-center"><%= Article.human_attribute_name :image %></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><%= @article.title %></td> 
-          <td><%= @article.content %></td>
+          <td style="width: 30%", class="text-center"><%= @article.title %></td> 
+          <td style="width: 40%", class="text-center"><%= @article.content %></td>
           <% if @article.image.attached? %>
-            <td>
+            <td style="width: 30%", class="text-center">
               <%= image_tag @article.image.variant(resize: "200x200") %>
             </td>
           <% end %>
