@@ -65,7 +65,7 @@ ja:
     dash_boards:
       show:
         article_index: 記事一覧
-        edit: 　  編集  　 
+        edit: 編集
         sign_out: ログアウト
     # ここまで
     mailer:
