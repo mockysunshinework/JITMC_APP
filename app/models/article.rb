@@ -1,8 +1,9 @@
 class Article < ApplicationRecord
   belongs_to :user
   has_one_attached :image
-  validates :title, length: { maximum: 10 }
-  validate :verify_file_type
+  validates :title, presence: true, length: { maximum: 10 } #presenceは必要なければ削除する。
+  validates :content, presence: true #presenceは必要なければこのバリデーションは削除する。
+  validate :verify_file_type #画像投稿機能に拡張子を制限する
 
   private
 

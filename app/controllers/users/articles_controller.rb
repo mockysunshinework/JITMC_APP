@@ -1,4 +1,6 @@
 class Users::ArticlesController < ApplicationController
+  before_action :authenticate_user!
+  
   def new
     @article = current_user.articles.new
   end
