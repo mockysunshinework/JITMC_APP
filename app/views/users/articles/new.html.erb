@@ -1,0 +1,26 @@
+<h1>記事の新規作成</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 mx-auto">
+    <%= form_with(model: @article, url: users_articles_path, method: :post, local: true) do |f| %>
+      <%= render 'users/shared/error_messages', resource: @article  %>
+    <div class="field">
+      <%= f.label :title, class: "label-article" %>
+      <%= f.text_field :title, class: "form-control" %>
+		</div>
+     <div class="field"> 
+      <%= f.label :content, class: "label-article" %>
+      <%= f.text_area :content, rows: 2, class: "form-control" %>
+		</div>
+
+     <div class="field">
+      <%= f.label :image, class: "label-article" %><br>
+      <%= f.file_field :image %>			
+		</div> 
+		
+    <div class="actions text-center my-4">
+			<%= f.submit t('activerecord.attributes.article.create'), class: "btn btn-primary btn-user-devise" %>
+		</div>
+    <% end %>
+		<%= link_to t('users.shared.links.back'), :back %>
+	</div>
+</div>

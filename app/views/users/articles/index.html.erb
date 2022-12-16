@@ -1,0 +1,37 @@
+<h1><%= t("activerecord.attributes.article.article_index") %></h1>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 mx-auto">
+		<div class="d-grid gap-2 col-6 mx-auto my-2">
+    	<%= link_to "記事新規作成", new_users_article_path, class: "btn btn-lg btn-primary" %>
+		</div>
+    <table class="table table-hover" id="table-articles">
+      <thead>
+        <tr>
+        	<th><%= Article.human_attribute_name :detail %></th>
+          <th><%= Article.human_attribute_name :title %></th>
+          <th><%= Article.human_attribute_name :content %></th>
+          <th><%= Article.human_attribute_name :image %></th>
+					<th><%= Article.human_attribute_name :edit_delete %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @articles.each do |article| %>
+        <tr>
+					<td><%= link_to "詳細表示", users_article_path(article), class: "btn btn-primary" %></td>
+          <td><%= article.title %></td> 
+          <td><%= article.content %></td>
+          <% if article.image.attached? %>
+            <td>
+              <%= image_tag article.image.variant(resize: "200x200") %>
+            </td>
+          <% end %>
+					<td>
+						<%= link_to t("activerecord.attributes.article.edit"), edit_users_article_path(article), class: "btn btn-primary" %>
+						<%= link_to t("activerecord.attributes.article.delete"), users_article_path(article), class: "btn btn-danger", method: :delete, data: {confirm: t('users.registrations.edit.are_you_sure')} %>
+					</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

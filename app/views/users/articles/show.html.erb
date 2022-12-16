@@ -1,0 +1,33 @@
+<h1><%= t("activerecord.attributes.article.article_detail") %></h1>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 mx-auto">
+		
+    <table class="table", id="table-articles">
+      <thead class="border-bottom border-2 border-dark">
+        <tr>
+          <th style="width: 30%", class="text-center"><%= Article.human_attribute_name :title %></th>
+          <th style="width: 40%", class="text-center"><%= Article.human_attribute_name :content %></th>
+          <th style="width: 30%", class="text-center"><%= Article.human_attribute_name :image %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="width: 30%", class="text-center"><%= @article.title %></td> 
+          <td style="width: 40%", class="text-center"><%= @article.content %></td>
+          <% if @article.image.attached? %>
+            <td style="width: 30%", class="text-center">
+              <%= image_tag @article.image.variant(resize: "200x200") %>
+            </td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-center my-4">
+		  <%= link_to t("activerecord.attributes.article.edit"),edit_users_article_path(@article) , class: "btn btn-primary" %>
+		  <%= link_to t("activerecord.attributes.article.delete"), users_article_path(@article), method: :delete, data: {confirm: t('users.registrations.edit.are_you_sure')}, class: "btn btn-danger" %>    
+    </div>
+        <div class="text-center my-4">
+		  <%= link_to t("activerecord.attributes.article.back_to_article_index"), users_articles_path, class: "btn btn-primary" %>  
+    </div>
+  </div>
+</div>

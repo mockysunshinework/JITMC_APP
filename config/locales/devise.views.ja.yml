@@ -26,8 +26,23 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+      article:
+        article_index: 記事一覧
+        article_detail: 記事詳細
+        article_edit: 記事の編集
+        back_to_article_index: 記事一覧に戻る
+        title: タイトル
+        content: 本文
+        image: 画像
+        detail: 詳細表示
+        edit_delete: 編集・削除
+        edit: 編集
+        delete: 削除
+        create: 新規作成
+        update_article: 更新する
     models:
       user: ユーザー
+      # article: 記事
   users:
     confirmations:
       confirmed: メールアドレスが確認できました。
@@ -49,7 +64,8 @@ ja:
     # ダッシュボードを追記
     dash_boards:
       show:
-        edit: 　  編集  　 
+        article_index: 記事一覧
+        edit: 編集
         sign_out: ログアウト
     # ここまで
     mailer:
